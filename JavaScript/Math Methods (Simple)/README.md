@@ -308,3 +308,14 @@ console.log(Math.fround(0.1));   // 0.10000000149011612
 console.log(Math.expm1(1));   // 1.718281828459045
 console.log(Math.expm1(0));   // 0
 ```
+
+<br />
+
+## Math.log1p(x)
+
+計算 1 + x 的自然對數，對於 x 接近 0 的值更精確。
+
+```
+console.log(Math.log1p(0));   // 0
+console.log(Math.log1p(1));   // 0.6931471805599453
+```
