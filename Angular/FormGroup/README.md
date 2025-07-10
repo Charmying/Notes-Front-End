@@ -22,3 +22,18 @@ FormGroup 通常用於包含多個欄位的表單，例如：註冊或登入表�
     ```
 
     在這個範例中，建立了一個 FormGroup，其中包含兩個控制項：`username` 和 `password`。透過 controls 屬性，可以存取這些控制項並對其進行操作。
+
+- value
+
+    value 屬性返回一個物件，其中包含了所有控制項的當前值，表示了目前表單的狀態。
+
+    ```
+    const formGroup = new FormGroup({
+        username: new FormControl('Charmy'),
+        password: new FormControl('123'),
+    });
+
+    console.log(formGroup.value);   // {username: 'Charmy', password: '123'}
+    ```
+
+    在這個範例中，`formGroup.value` 返回包含 `username` 和 `password` 當前值的物件。
