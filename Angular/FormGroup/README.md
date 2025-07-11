@@ -37,3 +37,21 @@ FormGroup 通常用於包含多個欄位的表單，例如：註冊或登入表�
     ```
 
     在這個範例中，`formGroup.value` 返回包含 `username` 和 `password` 當前值的物件。
+
+- valid & invalid
+
+    valid 屬性是一個 boolean，表示整個表單的有效性。只有當 FormGroup 中的所有控制項都通過了驗證，valid 才會是 `true`。這可以檢查整個表單是否有效，不需要逐一檢查每個控制項。
+
+    invalid 屬性與 valid 相反，當表單中有任何一個控制項無效時，會返回 `true`。invaild 適用於顯示錯誤訊息或防止用戶提交無效表單。
+    
+    ```
+    const formGroup = new FormGroup({
+        username: new FormControl('Charmy', Validators.required),
+        password: new FormControl('', Validators.required),
+    });
+
+    console.log(formGroup.valid);   // false
+    console.log(formGroup.invalid);   // true
+    ```
+
+    在這個範例中，為 `username` 和 `password` 添加 `Validators.required` 驗證器。因為 `password` 欄位是空的，所以 `formGroup.valid` 返回 `false`，而 `formGroup.invalid` 則返回 `true`。
